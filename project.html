@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta charset="utf-8"/>
+    <title>D# example</title>    
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div>this is a div</div>
+    <script>
+        d3.csv("satellites.csv",function(error,data){
+            console.log(data);
+        });
+    </script>
+   <!-- <script>
+        d3.csv("satellites.csv", function(error,data) {
+            var width = 800, height = 800;
+            var fill = d3.scaleBand().range(['#827d92','#2a3285','#383435'])
+            var svg = d3.select("#chart").append("svg")
+                .attr("width", width)
+                .attr("height", height);
+
+            for (var j = 0; j < data.length; j++) {
+                data[j].radius = +data[j].Age / 2; //A
+                data[j].x = Math.random() * width; //B
+                data[j].y = Math.random() * height; //C
+            }
+
+            draw('Users');  //A
+
+            $( ".btn" ).click(function() {
+            draw(this.id);  //B
+            });
+
+            function draw (varname) {
+            var centers = getCenters(varname, [800, 800]);
+            force.on("tick", tick(centers, varname));
+            labels(centers)
+            force.start();
+            }
+
+            var getCenters = function (vname, size) {
+            var centers, map;
+            centers = _.uniq(_.pluck(data, vname)).map(function (d) { //A
+                return {name: d, value: 1};
+            });
+
+            map = d3.layout.treemap().size(size).ratio(1/1); //B
+            map.nodes({children: centers}); //C
+
+            return centers; //D
+            };
+
+            // in the draw function
+            force.on("tick", tick(foci, varname));
+
+            function tick (centers, varname) {
+            var foci = {}; // Making an object here for quick look-up
+            for (var i = 0; i < centers.length; i++) {
+                foci[centers[i].name] = centers[i];
+            }
+            return function (e) { //A
+                for (var i = 0; i < data.length; i++) {
+                var o = data[i];
+                var f = foci[o[varname]];
+                o.y += ((f.y + (f.dy / 2)) - o.y) * e.alpha;
+                o.x += ((f.x + (f.dx / 2)) - o.x) * e.alpha;
+                }
+                nodes.each(collide(.11)) //B
+                .attr("cx", function (d) { return d.x; })
+                .attr("cy", function (d) { return d.y; });
+            }
+            }
+
+            function labels (centers) {
+            svg.selectAll(".label").remove();
+
+            svg.selectAll(".label")
+            .data(centers).enter().append("text")
+            .attr("class", "label")
+            .text(function (d) { return d.name })
+            .attr("transform", function (d) {
+                return "translate(" + (d.x - ((d.name.length)*3)) + ", " + (d.y - d.r) + ")";
+            });
+            }
+
+            var getCenters = function (vname, size) {
+            var centers, map;
+            centers = _.uniq(_.pluck(data, vname)).map(function (d) {
+                return {name: d, value: 1};
+            });
+
+            map = d3.layout.pack().size(size);
+            map.nodes({children: centers});
+
+            return centers;
+            };
+
+            function tick (centers, varname) {
+            var foci = {};
+            for (var i = 0; i < centers.length; i++) {
+                foci[centers[i].name] = centers[i];
+            }
+            return function (e) {
+                for (var i = 0; i < data.length; i++) {
+                var o = data[i];
+                var f = foci[o[varname]];
+                o.y += (f.y - o.y) * e.alpha;
+                o.x += (f.x - o.x) * e.alpha;
+                }
+                nodes.each(collide(.11))
+                .attr("cx", function (d) { return d.x; })
+                .attr("cy", function (d) { return d.y; });
+            }
+            }
+});
+    </script> -->
+</body>
+</html>

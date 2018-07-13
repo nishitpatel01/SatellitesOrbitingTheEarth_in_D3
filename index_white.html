@@ -1,0 +1,277 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Satellite Bubble Chart</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="bubble_chart.css">
+    <link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
+		<link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/bubble_chart.css">
+    <script src="bubble_parameters.js"></script>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section id="Index">
+            <h1>Every Satellite Orbiting the Earth</h1>
+            <p><small>Engineered by: Nishit K Patel (University of Illinois Urbana-Champaign)</small></p>
+            <p><small>Final Project: CS498 - Data Visualization</small></p>
+        </section>
+        <section id="VisualizationElements">
+          <h3>About the visualization</h3>
+          <small>
+            <ul>
+              <li class="fragement" data-fragement-index="1"><strong>Visualizaton & Narration Structure</strong></li>
+              <p class="fragement" data-fragement-index="2">This visualizatio follows a hybrid structure that contains the several pages/scenes. It is based on Interactive
+                 slideshow technique. In each page/slide, you will find directions and guidance which user can use to move between the slides at any time. 
+              </p>
+              <li class="fragement" data-fragement-index="3"><strong>Scene Utilization</strong></li>
+              <p class="fragement" data-fragement-index="4">The project contains few slides that contains interactive visualizations to convey the message. User can interact 
+                with these visualization to see the details of the data. Each visualization is preceded by details and followed by addition details in order to put additional 
+                light on the chart and data. These scenes/slides were created using Reveal.js library which provides smooth transition between scenes, maintains coherency and 
+                provides rich user experience. The visual elements such as colors, fonts and apperance is consistent throuhout the project.</p>
+              <li class="fragement" data-fragement-index="5"><strong>Annotations</strong></li>
+              <p class="fragement" data-fragement-index="6">Annotations in this project are represented by tooltips which displays the details of the data points user is interested in. 
+                for example, in first stacked bar chart user can see the satellite type, usage and purpose etc. and on the other visualization, displays Operator country, Apogee and 
+                Perigee etc. These annotations will appers when user will hover on data elements and will disappers when user move away the mouse.
+              </p>
+              <li class="fragement" data-fragement-index="7"><strong>Parameters</strong></li>
+              <p class="fragement" data-fragement-index="8">There are several parameter used throughout the project and in different form. There are two directonal arrows on each slides
+                to navigate back and forth between the slides. User can also use mouse rollers or left and right keys from keyboard to navigate. The Arrow in the right direction will
+                always appear to be active and left arrow will not but user can still use left arrow to navigate to previous scenes/slides. Users will start seeing left arrow once 
+                they pass first scenes/slides. At the bottom of the page, users can also see the progress bar as well as current slide number.
+              </p>
+              <li class="fragement" data-fragement-index="9"><strong>Triggers</strong></li>
+              <p class="fragement" data-fragement-index="10">All the charts in this projects have parameters in some form. For the first visualization user can use filters to switch 
+                between the stacked bar chart types. In second visualization, there are few buttons on visualization that when pressed, changes the visualization 
+                state or change the the visualization all together. For example one button causes chart to switch from grouped bubble chart to scatter plot of same data points.</p>
+            </ul>
+          </small>
+        </section>
+        <section id="Dataset">
+          <h3>The Dataset</h3>
+          <p><small>The dataset used for this visualization is from <a href="https://www.ucsusa.org/nuclear-weapons/space-weapons/satellite-database">Union of Concerned Scientst</a> database. 
+            This dataset consists of data about all the satellites that orbit the earth today. Assembled by experts at the Union of Concerned Scientists (UCS), the Satellite 
+            Database is a listing of the more than 1700 operational satellites currently in orbit around Earth. The database contains 26 types of data for each satellite, including 
+            technical information about each satellite (mass, power, launch date, expected lifetime) and its orbit (apogee, perigee, inclination, and period), as well as information 
+            on what the satellite is used for, and who owns, operates, and built the satellite.
+            Class of orbit etc. 
+          </small></p>
+        </section>
+        <section id="satelliteAge">
+            <style>
+                form {
+                  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                  position: absolute;
+                  left: 10px;
+                  top: 10px;
+                }
+                label {
+                  display: block;
+                }
+                </style>
+                <form>
+                  <label><input type="radio" name="mode" value="grouped"> Grouped</label>
+                  <label><input type="radio" name="mode" value="stacked" checked> Stacked</label>
+                </form>
+                <svg width="800" height="500"></svg>
+                <script src="https://d3js.org/d3.v4.min.js"></script>
+                <script>
+                var n = 4, // The number of series.
+                    m = 58; // The number of values per series.
+                // The xz array has m elements, representing the x-values shared by all series.
+                // The yz array has n elements, representing the y-values of each of the n series.
+                // Each yz[i] is an array of m non-negative numbers representing a y-value for xz[i].
+                // The y01z array has the same structure as yz, but with stacked [y₀, y₁] instead of y.
+                var xz = d3.range(m),
+                    yz = d3.range(n).map(function() { return bumps(m); }),
+                    y01z = d3.stack().keys(d3.range(n))(d3.transpose(yz)),
+                    yMax = d3.max(yz, function(y) { return d3.max(y); }),
+                    y1Max = d3.max(y01z, function(y) { return d3.max(y, function(d) { return d[1]; }); });
+                var svg = d3.select("svg"),
+                    margin = {top: 40, right: 10, bottom: 20, left: 10},
+                    width = +svg.attr("width") - margin.left - margin.right,
+                    height = +svg.attr("height") - margin.top - margin.bottom,
+                    g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+                var x = d3.scaleBand()
+                    .domain(xz)
+                    .rangeRound([0, width])
+                    .padding(0.08);
+                var y = d3.scaleLinear()
+                    .domain([0, y1Max])
+                    .range([height, 0]);
+                var color = d3.scaleOrdinal()
+                    .domain(d3.range(n))
+                    .range(d3.schemeCategory20c);
+                var series = g.selectAll(".series")
+                  .data(y01z)
+                  .enter().append("g")
+                    .attr("fill", function(d, i) { return color(i); });
+                var rect = series.selectAll("rect")
+                  .data(function(d) { return d; })
+                  .enter().append("rect")
+                    .attr("x", function(d, i) { return x(i); })
+                    .attr("y", height)
+                    .attr("width", x.bandwidth())
+                    .attr("height", 0);
+                rect.transition()
+                    .delay(function(d, i) { return i * 10; })
+                    .attr("y", function(d) { return y(d[1]); })
+                    .attr("height", function(d) { return y(d[0]) - y(d[1]); });
+                g.append("g")
+                    .attr("class", "axis axis--x")
+                    .attr("transform", "translate(0," + height + ")")
+                    .call(d3.axisBottom(x)
+                        .tickSize(0)
+                        .tickPadding(6));
+                d3.selectAll("input")
+                    .on("change", changed);
+                var timeout = d3.timeout(function() {
+                  d3.select("input[value=\"grouped\"]")
+                      .property("checked", true)
+                      .dispatch("change");
+                }, 2000);
+                function changed() {
+                  timeout.stop();
+                  if (this.value === "grouped") transitionGrouped();
+                  else transitionStacked();
+                }
+                function transitionGrouped() {
+                  y.domain([0, yMax]);
+                  rect.transition()
+                      .duration(500)
+                      .delay(function(d, i) { return i * 10; })
+                      .attr("x", function(d, i) { return x(i) + x.bandwidth() / n * this.parentNode.__data__.key; })
+                      .attr("width", x.bandwidth() / n)
+                    .transition()
+                      .attr("y", function(d) { return y(d[1] - d[0]); })
+                      .attr("height", function(d) { return y(0) - y(d[1] - d[0]); });
+                }
+                function transitionStacked() {
+                  y.domain([0, y1Max]);
+                  rect.transition()
+                      .duration(500)
+                      .delay(function(d, i) { return i * 10; })
+                      .attr("y", function(d) { return y(d[1]); })
+                      .attr("height", function(d) { return y(d[0]) - y(d[1]); })
+                    .transition()
+                      .attr("x", function(d, i) { return x(i); })
+                      .attr("width", x.bandwidth());
+                }
+                // Returns an array of m psuedorandom, smoothly-varying non-negative numbers.
+                // Inspired by Lee Byron’s test data generator.
+                // http://leebyron.com/streamgraph/
+                function bumps(m) {
+                  var values = [], i, j, w, x, y, z;
+                  // Initialize with uniform random values in [0.1, 0.2).
+                  for (i = 0; i < m; ++i) {
+                    values[i] = 0.1 + 0.1 * Math.random();
+                  }
+                  // Add five random bumps.
+                  for (j = 0; j < 5; ++j) {
+                    x = 1 / (0.1 + Math.random());
+                    y = 2 * Math.random() - 0.5;
+                    z = 10 / (0.1 + Math.random());
+                    for (i = 0; i < m; i++) {
+                      w = (i / m - y) * z;
+                      values[i] += x * Math.exp(-w * w);
+                    }
+                  }
+                  // Ensure all values are positive.
+                  for (i = 0; i < m; ++i) {
+                    values[i] = Math.max(0, values[i]);
+                  }
+                  return values;
+                }
+                </script>
+        </section>
+        <section id="SatelliteTypes">
+            <div class="container">
+                <div id="header">
+                  <h6 id="report_title"></h6>
+                </div>  
+          
+                <div id="toolbar">
+                </div> 
+             
+                <div id="vis"></div>
+          
+                <div class="footer">
+                  <p id="footer_text"></p>
+                
+                </div>
+              </div>          
+        </section>
+        <section id="conclusion">
+            <h5>So what happened in last 44 years...</h5>
+            <p><iframe class="juxtapose" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=03d44e24-e16f-11e5-a524-0e7075bba956" frameborder="0" width="650" height="380"></iframe></p>
+            <p><small>As we can see that since the first satellite was launched back in 60's there were only few countries that had satellites let alone the capabilities on launcing 
+              the satellite with space launch. In last 4 decades we have seen tremendous growth notn only in number of satellies launched by several coutries but also in what purpose 
+              these satellites are used for. As of 2016, countries from virtually every continent have their satellite orbiting the earth. We also see the increase in coutries who have
+              space launching capabilities as well.
+            </small></p>
+        </section>
+        <section id="Acknowledgements">
+          <h3>Acknowledgements & Resources</h3>
+          <small>
+            <ul>
+              <li class="fragement" data-fragement-index="1">Data used for visualization from <a  hre="https://www.ucsusa.org/nuclear-weapons/space-weapons/satellite-database">Union of Concerned Scientist Database</a></li>
+              <li class="fragement" data-fragement-index="2">HTML Presentation Framework - <a href="https://revealjs.com/#/">Reveal.js</a></li>
+              <li class="fragement" data-fragement-index="3">Interactive Visualization using <a href="https://d3js.org/">D3js</a></li>
+              <li class="fragement" data-fragement-index="3">Bubble Chart Animation from <a href="https://gist.github.com/MichaelCurrie">Micheal Currie</a></li>
+              <li class="fragement" data-fragement-index="3">Stakced bar chart from <a href="https://bl.ocks.org/guilhermesimoes/8913c15adf7dd2cab53a">Guilherme Simoes</a></li>
+              <li class="fragement" data-fragement-index="3">Before and after comparison picture using <a href="https://juxtapose.knightlab.com/">JuxtaposeJS</a></li>
+              <li class="fragement" data-fragement-index="3">Visuazaliton projecr by <a href="https://www.linkedin.com/in/nishit-patel-89246430/">Nishit K Patel</a></li>
+            </ul>
+          </small>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    
+    <script>
+
+        // More info https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+          controls: true,
+          progress: true,
+          history: true,
+          center: true,
+          slideNumber: true,
+          touch: true,
+          mouseWheel: true,
+          transition: 'slides',
+          transitionSpeed: 'slow',
+          controlsLayout: 'edges',
+          keyboard: true,
+  
+          // More info https://github.com/hakimel/reveal.js#dependencies
+          dependencies: [
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: 'plugin/zoom-js/zoom.js', async: true },
+            { src: 'plugin/notes/notes.js', async: true }
+          ]
+        });
+  
+      </script>
+
+
+  
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/topojson.v2.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
+    <script src="tooltip.js"></script>
+    <script src="bubble_chart.js"></script>
+  </body>
+</html>
