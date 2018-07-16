@@ -1,0 +1,389 @@
+{
+        "name":"satellitesType",
+        "children":[
+            {  
+                "name":"communications",
+                "children":   [  
+                         {  
+                      "name":"Equatorial",
+                      "children":         [  
+                                     {  
+                            "name":"LEO","size":2
+                         },
+                                     {  
+                            "name":"MEO","size":12
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"Molniya",
+                      "children":         [  
+                                     {  
+                            "name":"Elliptical","size":10
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"None",
+                      "children":         [  
+                                     {  
+                            "name":"GEO","size":457
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"Non-Polar Inclined",
+                      "children":         [  
+                                     {  
+                            "name":"LEO","size":94
+                         },
+                                     {  
+                            "name":"MEO","size":1
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"Polar",
+                      "children":         [  
+                                     {  
+                            "name":"LEO","size":129
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"Sun-Synchronous",
+                      "children":         [  
+                                     {  
+                            "name":"LEO","size":37
+                         }
+                      ]
+                   }
+                ]
+             },
+             {  
+                "name":"Earth Observation",
+                "children":   [  
+                         {  
+                      "name":"Elliptical",
+                      "children":         [  
+                                     {  
+                            "name":"LEO","size":4
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"Equatorial",
+                      "children":         [  
+                                     {  
+                            "name":"LEO","size":7
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"Molniya",
+                      "children":         [  
+                                     {  
+                            "name":"Elliptical","size":5
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"None",
+                      "children":         [  
+                                     {  
+                            "name":"Elliptical","size":3
+                         },
+                                     {  
+                            "name":"GEO","size":40
+                         },
+                                     {  
+                            "name":"LEO","size":2
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"Non-Polar Inclined",
+                      "children":         [  
+                                     {  
+                            "name":"LEO","size":113
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"Polar",
+                      "children":         [  
+                                     {  
+                            "name":"LEO","size":17
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"Sun-Synchronous",
+                      "children":         [  
+                                     {  
+                            "name":"LEO","size":405
+                         }
+                      ]
+                   }
+                ]
+             },
+             {  
+                "name":"Earth Science",
+                "children":   [  
+                         {  
+                      "name":"Elliptical",
+                      "children":         [  
+                                     {  
+                            "name":"LEO","size":1
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"Equatorial",
+                      "children":         [  
+                                     {  
+                            "name":"LEO","size":1
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"Non-Polar Inclined",
+                      "children":         [  
+                                     {  
+                            "name":"LEO","size":12
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"Sun-Synchronous",
+                      "children":         [  
+                                     {  
+                            "name":"LEO","size":10
+                         }
+                      ]
+                   }
+                ]
+             },
+             {  
+                "name":"Navigation",
+                "children":   [  
+                         {  
+                      "name":"None",
+                      "children":         [  
+                                     {  
+                            "name":"GEO","size":24
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"Non-Polar Inclined",
+                      "children":         [  
+                                     {  
+                            "name":"MEO","size":84
+                         }
+                      ]
+                   }
+                ]
+             },
+             {  
+                "name":"Space Observation",
+                "children":   [  
+                         {  
+                      "name":"None",
+                      "children":         [  
+                                     {  
+                            "name":"GEO","size":4
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"Non-Polar Inclined",
+                      "children":         [  
+                                     {  
+                            "name":"LEO","size":1
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"Sun-Synchronous",
+                      "children":         [  
+                                     {  
+                            "name":"LEO","size":4
+                         }
+                      ]
+                   }
+                ]
+             },
+             {  
+                "name":"Space Science",
+                "children":   [  
+                         {  
+                      "name":"Cislunar",
+                      "children":         [  
+                                     {  
+                            "name":"LEO","size":1
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"Deep Highly Eccentric",
+                      "children":         [  
+                                     {  
+                            "name":"Elliptical","size":9
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"Elliptical",
+                      "children":         [  
+                                     {  
+                            "name":"LEO","size":2
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"Equatorial",
+                      "children":         [  
+                                     {  
+                            "name":"LEO","size":2
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"None",
+                      "children":         [  
+                                     {  
+                            "name":"Elliptical","size":9
+                         },
+                                     {  
+                            "name":"GEO","size":1
+                         },
+                                     {  
+                            "name":"LEO","size":2
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"Non-Polar Inclined",
+                      "children":         [  
+                                     {  
+                            "name":"LEO","size":14
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"Polar",
+                      "children":         [  
+                                     {  
+                            "name":"LEO","size":3
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"Sun-Synchronous",
+                      "children":         [  
+                                     {  
+                            "name":"LEO","size":23
+                         }
+                      ]
+                   }
+                ]
+             },
+             {  
+                "name":"Technology Demonstration",
+                "children":   [  
+                         {  
+                      "name":"Equatorial",
+                      "children":         [  
+                                     {  
+                            "name":"LEO","size":1
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"Non-Polar Inclined",
+                      "children":         [  
+                                     {  
+                            "name":"LEO","size":6
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"Sun-Synchronous",
+                      "children":         [  
+                                     {  
+                            "name":"LEO","size":6
+                         }
+                      ]
+                   }
+                ]
+             },
+             {  
+                "name":"Technology Development",
+                "children":   [  
+                         {  
+                      "name":"Elliptical",
+                      "children":         [  
+                                     {  
+                            "name":"LEO","size":2
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"Equatorial",
+                      "children":         [  
+                                     {  
+                            "name":"LEO","size":7
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"Molniya",
+                      "children":         [  
+                                     {  
+                            "name":"Elliptical","size":1
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"None",
+                      "children":         [  
+                                     {  
+                            "name":"Elliptical","size":2
+                         },
+                                     {  
+                            "name":"GEO","size":5
+                         },
+                                     {  
+                            "name":"LEO","size":3
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"Non-Polar Inclined",
+                      "children":         [  
+                                     {  
+                            "name":"LEO","size":34
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"Polar",
+                      "children":         [  
+                                     {  
+                            "name":"LEO","size":18
+                         }
+                      ]
+                   },
+                         {  
+                      "name":"Sun-Synchronous",
+                      "children":         [  
+                                     {  
+                            "name":"LEO","size":108
+                         }
+                      ]
+                   }
+                ]
+             }
+        ]
+}

@@ -3,7 +3,7 @@ a, a:visited, a:active {
 }
 
 .container {
-  max-width: 940px;
+  max-width: 1100px;
   margin: auto;
 }
 
@@ -12,19 +12,19 @@ a, a:visited, a:active {
   padding: 4px 5px;
   cursor: pointer;
   text-align: center;
-  font-size: 13px;
+  font-size: 10px;
   border: 1px solid #e0e0e0;
   text-decoration: none;
 }
 
 .button.active {
-  background: #000;
-  color: #fff;
+  background: rgb(255, 252, 252);
+  color: rgb(65, 133, 235);
 }
 
 #vis {
-  width: 940px;
-  height: 700px;
+  width: 1100px;
+  height: 800px;
   clear: both;
   margin-bottom: 10px;
   margin-top: 30px;
@@ -35,7 +35,7 @@ a, a:visited, a:active {
 }
 
 .bubble_group_label {
-  font-size: 21px;
+  font-size: 15px;
   fill: #aaa;
   cursor: default;
 }

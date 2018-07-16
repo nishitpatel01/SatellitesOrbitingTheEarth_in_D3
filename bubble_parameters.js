@@ -1,12 +1,12 @@
 var BUBBLE_PARAMETERS = {
     "data_file": "satellites.csv",
-    "report_title": "Every Satellite Orbiting the Earth",
-    "footer_text": "All the Satellites orbitng the Earth.",
-    "width": 940,
-    "height": 500,
+    "report_title": "Satellites by Type",
+    "footer_text": "",
+    "width": 1000,
+    "height":700,
     "force_strength": 0.03,
     "force_type": "charge",
-    "radius_field": "LaunchMass",
+    "radius_field": "Age",
     "numeric_fields": ["Perigee", "Apogee", "Period", "DryMass", "Power", "LaunchMass", "Age"],
     "fill_color": {
         "data_field": "OperatorCountry",
@@ -14,7 +14,7 @@ var BUBBLE_PARAMETERS = {
             "Algeria": "#d84b2a",
             "Argentina": "#beccae",
             "Australia": "#7aa25c",
-            "Austria": "#0C090A",
+           /* "Austria": "#0C090A",
             "Azerbaijan": "#34282C",
             "Bangladesh": "#25383C",
             "Belarus": "#5C5858",
@@ -102,7 +102,7 @@ var BUBBLE_PARAMETERS = {
             "USA/Russia": "#9F000F",
             "USA/United Kingdom/Italy": "#7E3517",
             "Venezuela": "#800517",
-            "Vietnam": "#7F525D"
+            "Vietnam": "#7F525D"    */
         }
     },
     "tooltip": [
@@ -115,6 +115,7 @@ var BUBBLE_PARAMETERS = {
         {"title": "Age", "data_field": "Age"},
         {"title": "ContractorCountry", "data_field": "ContractorCountry"},
         {"title": "Launch Date", "data_field": "LaunchDate"},
+        {"title": "Orbit Type", "data_field": "OrbitType"},
     ],
     "modes": [
         {
