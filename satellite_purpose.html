@@ -16,7 +16,7 @@
 }
 
 .label {
-  font: 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 13px "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-anchor: middle;
   text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
 }
@@ -28,18 +28,21 @@
 }
 
 </style>
-<svg width="960" height="500"></svg>
+<svg width="600" height="600"></svg>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
 
-var svg = d3.select("svg"),
+var svg = d3.select("svg").style("display","block").style("margin","auto"),
     margin = 20,
     diameter = +svg.attr("width"),
     g = svg.append("g").attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
+    
 
 var color = d3.scaleLinear()
     .domain([-1, 5])
-    .range(["hsl(152,80%,80%)", "hsl(228,30%,40%)"])
+    //.range(["hsl(152,80%,80%)", "hsl(228,30%,40%)"])
+    .range(["hsl(190,60%,60%)", "hsl(210,15%,40%)"])
+    //.range(["hsl(0, 0%, 86%)","hsl(210, 14%, 53%)"])
     .interpolate(d3.interpolateHcl);
 
 var pack = d3.pack()
