@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Satellite Bubble Chart</title>
+    <title>Satellites Orbiting the Earth</title>
 
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="css/reveal.css">
@@ -22,7 +22,7 @@
             <p><small>Final Project: CS498 - Data Visualization</small></p>
         </section>
         <section id="VisualizationElements">
-          <h3>About the visualization</h3>
+          <h4>About the visualization</h4>
           <small>
             <ul>
               <li class="fragement" data-fragement-index="1"><strong>Visualizaton & Narration Structure</strong></li>
@@ -54,7 +54,7 @@
           </small>
         </section>
         <section id="Dataset">
-          <h3>The Dataset</h3>
+          <h4>The Dataset</h4>
           <p><small>The dataset used for this visualization is from <a href="https://www.ucsusa.org/nuclear-weapons/space-weapons/satellite-database">Union of Concerned Scientst</a> database. 
             This dataset consists of data about all the satellites that orbit the earth today. Assembled by experts at the Union of Concerned Scientists (UCS), the Satellite 
             Database is a listing of the more than 1700 operational satellites currently in orbit around Earth. The database contains 26 types of data for each satellite, including 
@@ -63,19 +63,19 @@
             Class of orbit etc. 
           </small></p>
         </section>
-        <section id="stacked">
-            <h3>Satellite Age in the Orbit</h3>
-            <iframe src="project.html" name="targetframe" allowTransparency="true" scrollbar="yes" frameborder="0" height="700" width="1300" > 
+        <section id="StackedChart">
+            <h4>Satellite Age in the Orbit</h4>
+            <iframe src="stacked.html" name="targetframe" allowTransparency="true" scrollbar="yes" frameborder="0" height="700" width="1300" > 
             </iframe>
         </section> 
-        <section id="stacked_descption">
+        <section id="StackedDescption">
             <p>
                 <small>
                     The Stacked bar chart in the previous screen shows the satellites currently orbiting the earth and its age. These satellites are broken out by its usage
-                    type. Note that these are the satellites that are currently orbiting the earth and functioning. This visual reveals some interesting information that sheds
-                    some light on how we have made progress thoughout the years. For example it can be seen from visual that oldest functioning satellite that is still orbiting
-                    the Earth was launched 44 years ago by xxx for mix use of Military and Commercial purpose. Many of these old satellites were used for either military orbit
-                    commercial purposes. After that we see the trend of more commercial satellites. 
+                    type. Note that these are the satellites that are currently orbiting the earth and functioning. This visual reveals some interesting information and sheds
+                    some light on how we have made progress throughout the years. For example it can be seen from visual that oldest functioning satellite that is still orbiting
+                    the Earth was launched 44 years ago for mix use of Military and Commercial purpose. Many of these old satellites were used for either military or 
+                    commercial purposes. 
                 </small>
               </p>
               <p>
@@ -85,13 +85,40 @@
                   military purpose but we see an increase in usage for civil purposes.
                 </small>
               </p>
+              <p>
+                  <small>
+                    These satellites are serve specific purpose and orbit in its unique class. Some of the satellites have its fixed orbit type and orbit class i.e. how far it is 
+                    orbiting the earth, how the path of orbit look like etc. In the next screen let's take a look where these satellites are grouped by its purpose and 
+                    then again by orbit type and its class.  
+                  </small>
+                </p>
         </section> 
-        <section>
-          <h3>Satellite by Types</h3>
-          <iframe src="satellite_purpose.html" name="targetframe" allowTransparency="true" frameborder="0" height="600" width="1300"></iframe>
+        <section id="SatellitesByTypes">
+          <h4>What are these satellites used for</h4>
+            <iframe src="satellite_purpose.html" name="targetframe" allowTransparency="true" frameborder="0" height="800" width="1100"></iframe>
+            <h7>This is some description about above plot</h7>
+        </section>
+        <section id="TypeDescription">
+            <p>
+              <small>
+                Last chart illustrates what there satellites are used for. Satellites are shown in packed circle and first grouped by its purpose. We can see that some of the important
+                areas in which satellites are used for are Communications, Earth Observation like weather prediction, navigation, space observation, space sciences etc. Satellites are 
+                then grouped by its orbit type, these includes but not limited to equatorial, sun-synchronus, polar, non-polar inclined and there are some satellites that do not have 
+                fixed orbit type and can be manuevered as needed. These satellites falls under none categories as shown in the chart. Satellites are further classified into third group
+                which is its orbit class. There are LEO,GEO, MEO and elliptical. LEO is short for low earth orbit. These satellites orbit between 160 and 2000 km above earth. MEO is
+                short for medium earth orbit and altitude is between 2000 and 35786km. GEO stands for geosynchronous, or geostationary earth orbit and these satellites for higher than
+                35786 km above earth's surface.
+              </small>
+            </p>
+            <p>
+              <small>
+                In the next slide, we will see how the Apogee and Perigee of these satellites compares which will give some understanding of how these satellites orbit and what purpose
+                they are used for. Apogee and Perigee are helpful to calculate and identify the orbit type of a satellite. So lets take a look...
+              </small>
+            </p>
         </section>
        <section id="ApogeePerigee">
-          <h3>Satellites Apogee Vs Perigee</h3>
+          <h4>Satellites Apogee Vs Perigee</h4>
           <iframe src="scatterPlot.html" name="targetframe" allowTransparency="true" scrollbar="yes" frameborder="0" height="700" width="1300"></iframe>
        </section>
         <section id="ScatterDescription">
@@ -104,8 +131,8 @@
             </small>
           </p>
         </section>  
-        <section id="conclusion">
-            <h3>So what happened in last 4-5 decades...</h3>
+        <section id="Conclusion">
+            <h4>So what happened in last 4-5 decades...</h4>
             <p><iframe class="juxtapose" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=03d44e24-e16f-11e5-a524-0e7075bba956" frameborder="0" width="650" height="380"></iframe></p>
             <p><small>As we can see that since the first satellite was launched back in 60's there were only few countries that had satellites let alone the capabilities on launcing 
               the satellite with space launch. In last 4 decades we have seen tremendous growth notn only in number of satellies launched by several coutries but also in what purpose 
@@ -114,16 +141,17 @@
             </small></p>
         </section>
         <section id="Acknowledgements">
-          <h3>Acknowledgements & Resources</h3>
+          <h4>Acknowledgements & Resources</h4>
           <small>
             <ul>
               <li class="fragement" data-fragement-index="1">Data used for visualization from <a  hre="https://www.ucsusa.org/nuclear-weapons/space-weapons/satellite-database">Union of Concerned Scientist Database</a></li>
-              <li class="fragement" data-fragement-index="2">HTML Presentation Framework - <a href="https://revealjs.com/#/">Reveal.js</a></li>
+              <li class="fragement" data-fragement-index="2">HTML presentation framework <a href="https://revealjs.com/#/">Reveal.js</a></li>
               <li class="fragement" data-fragement-index="3">Interactive Visualization using <a href="https://d3js.org/">D3js</a></li>
-              <li class="fragement" data-fragement-index="4">Bubble Chart Animation from <a href="https://gist.github.com/MichaelCurrie">Micheal Currie</a></li>
-              <li class="fragement" data-fragement-index="5">Stakced bar chart from <a href="https://bl.ocks.org/guilhermesimoes/8913c15adf7dd2cab53a">Guilherme Simoes</a></li>
-              <li class="fragement" data-fragement-index="6">Before and after comparison picture using <a href="https://juxtapose.knightlab.com/">JuxtaposeJS</a></li>
-              <li class="fragement" data-fragement-index="7">Visuazaliton projecr by <a href="https://www.linkedin.com/in/nishit-patel-89246430/">Nishit K Patel</a></li>
+              <li class="fragement" data-fragement-index="4">Zoomable circle packing from <a href="https://bl.ocks.org/mbostock">Mike Bostok</a></li>
+              <li class="fragement" data-fragement-index="5">Stakced bar chart from <a href="https://bl.ocks.org/KatiRG">KatiRG</a></li>
+              <li class="fragement" data-fragement-index="4">Filterable scatter chart from <a href="https://bl.ocks.org/Ctuauden">Ctuauden</a></li>
+              <li class="fragement" data-fragement-index="6">Before and after comparison picture using <a href="https://juxtapose.knightlab.com/">JuxtaposeJS</a> and <a hre="https://www.ucsusa.org/nuclear-weapons/space-weapons/satellite-database">UCS site</a></li>
+              <li class="fragement" data-fragement-index="7">Visualization project by <a href="https://www.linkedin.com/in/nishit-patel-89246430/">Nishit K Patel</a></li>
             </ul>
           </small>
         </section>  
