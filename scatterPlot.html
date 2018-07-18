@@ -39,11 +39,17 @@ var margin = {top: 80, right: 20, bottom: 30, left: 80},
     width = 900 - margin.left - margin.right,
     height = 550 - margin.top - margin.bottom;
 
-var x = d3.scaleLinear()
+ var x = d3.scaleLinear()
     .range([0, width]);
 
 var y = d3.scaleLinear()
-    .range([height, 0]);
+    .range([height, 0]); 
+
+/* var x = d3.scale.log()
+    .range([0.1, width]);
+
+var y = d3.scale.log()
+    .range([height, 0.1]); */
 
 var r = d3.scaleSqrt()
 		.range([60,120]);
@@ -63,8 +69,10 @@ var symbol = d3.symbol().size(100);
 var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+    .style("display","block")
+    .style("margin","auto");
 
   var tooltip = d3.select("body").append("div")
 					.attr("class", "tooltip")
@@ -78,11 +86,11 @@ d3.csv('satellites.csv', function(error, data){
 	});
 
 	x.domain(d3.extent(data, function(d){
-		return d.Apogee;
+		return d.Perigee;
 	})).nice();
 
 	y.domain(d3.extent(data, function(d){
-		return d.Perigee;
+		return d.Apogee;
 	})).nice();
 
 	r.domain(d3.extent(data, function(d){
@@ -122,7 +130,7 @@ d3.csv('satellites.csv', function(error, data){
     .attr("d", function(d, i) { return symbol.type(symbols(d.Purpose))(); })
     .style("fill", function(d) { return color(d.Purpose); })
     .attr("transform", function(d) { 
-      return "translate(" + x(d.Apogee) + "," + y(d.Perigee) +")"; 
+      return "translate(" + x(d.Perigee) + "," + y(d.Apogee) +")"; 
     });
   
   var clicked = ""
@@ -137,7 +145,7 @@ d3.csv('satellites.csv', function(error, data){
     .style("fill", function(d) { return color(d); })
     	.attr("d", function(d, i) { return symbol.type(symbols(d))(); })
 	    .attr("transform", function(d, i) { 
-    		return "translate(" + (width -10) + "," + 10 + ")";
+    		return "translate(" + (width - 10) + "," + 10 + ")";
   		})
   		.on("click",function(d){
    d3.selectAll(".symbol").style("opacity",1)
