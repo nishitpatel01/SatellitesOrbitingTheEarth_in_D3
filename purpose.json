@@ -2,7 +2,7 @@
         "name":"satellitesType",
         "children":[
             {  
-                "name":"communications",
+                "name":"Communications",
                 "children":   [  
                          {  
                       "name":"Equatorial",
