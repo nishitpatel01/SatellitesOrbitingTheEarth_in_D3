@@ -17,33 +17,33 @@
     <div class="reveal">
       <div class="slides">
         <section id="Index">
-            <h1>Every Satellite Orbiting the Earth</h1>
-            <p><small>Engineered by: Nishit K Patel (University of Illinois Urbana-Champaign)</small></p>
-            <p><small>Final Project: CS498 - Data Visualization</small></p>
+            <h3>Every Satellite Orbiting the Earth</h3>
+            <p><small>Created by: Nishit K Patel (University of Illinois Urbana-Champaign)</small></p>
+            <p><small>CS498: Data Visualization Project</small></p>
         </section>
         <section id="VisualizationElements">
           <h4>About the visualization</h4>
           <small>
             <ul>
               <li class="fragement" data-fragement-index="1"><strong>Visualizaton & Narration Structure</strong></li>
-              <p class="fragement" data-fragement-index="2">This visualizatio follows a hybrid structure that contains the several pages/scenes. It is based on Interactive
-                 slideshow technique. In each page/slide, you will find directions and guidance which user can use to move between the slides at any time. 
+              <p class="fragement" data-fragement-index="2">This visualizatio follows a hybrid structure that contains the several scenes. It is based on Interactive
+                 slideshow technique. In each slide, directions and guidance are provided which user can use to move between the slides at any time. 
               </p>
               <li class="fragement" data-fragement-index="3"><strong>Scene Utilization</strong></li>
-              <p class="fragement" data-fragement-index="4">The project contains few slides that contains interactive visualizations to convey the message. User can interact 
-                with these visualization to see the details of the data. Each visualization is preceded by details and followed by addition details in order to put additional 
-                light on the chart and data. These scenes/slides were created using Reveal.js library which provides smooth transition between scenes, maintains coherency and 
+              <p class="fragement" data-fragement-index="4">The project consists of few slides that contains interactive visualizations to convey the message. User can interact 
+                with these visualization to see the details of the data elements. Each visualization is followed by addition details in order to put additional 
+                light on the chart and data. These scenes were created using Reveal.js library which provides smooth transition between scenes, maintains coherency and 
                 provides rich user experience. The visual elements such as colors, fonts and apperance is consistent throuhout the project.</p>
               <li class="fragement" data-fragement-index="5"><strong>Annotations</strong></li>
               <p class="fragement" data-fragement-index="6">Annotations in this project are represented by tooltips which displays the details of the data points user is interested in. 
-                for example, in first stacked bar chart user can see the satellite type, usage and purpose etc. and on the other visualization, displays Operator country, Apogee and 
-                Perigee etc. These annotations will appers when user will hover on data elements and will disappers when user move away the mouse.
+                for example, in first stacked bar chart user can see the satellite type, usage and purpose etc. and on the other visualizations, displays Operator country, Apogee and 
+                Perigee etc. These annotations will appers when user will hover on data elements. In zoomable circle pack chart, user will see once they zoom into appropriate circles.
               </p>
               <li class="fragement" data-fragement-index="7"><strong>Parameters</strong></li>
               <p class="fragement" data-fragement-index="8">There are several parameter used throughout the project and in different form. There are two directonal arrows on each slides
-                to navigate back and forth between the slides. User can also use mouse rollers or left and right keys from keyboard to navigate. The Arrow in the right direction will
-                always appear to be active and left arrow will not but user can still use left arrow to navigate to previous scenes/slides. Users will start seeing left arrow once 
-                they pass first scenes/slides. At the bottom of the page, users can also see the progress bar as well as current slide number.
+                to navigate between the slides. User can also use mouse rollers or left and right keys from keyboard to navigate. The Arrow in the right direction will
+                always appear to be active and left arrow will not but user can still use left arrow to navigate to previous scenes/slides. At the bottom of the page, 
+                users can also see the progress bar as well as current slide number.
               </p>
               <li class="fragement" data-fragement-index="9"><strong>Triggers</strong></li>
               <p class="fragement" data-fragement-index="10">All the charts in this projects have trigeers. For the first visualization user can filter the visual by clicking on 
@@ -57,10 +57,9 @@
           <h4>The Dataset</h4>
           <p><small>The dataset used for this visualization is from <a href="https://www.ucsusa.org/nuclear-weapons/space-weapons/satellite-database">Union of Concerned Scientst</a> database. 
             This dataset consists of data about all the satellites that orbit the earth today. Assembled by experts at the Union of Concerned Scientists (UCS), the Satellite 
-            Database is a listing of the more than 1700 operational satellites currently in orbit around Earth. The database contains 26 types of data for each satellite, including 
+            Database is a listing of the more than 1,700 operational satellites currently in orbit around Earth. The database contains 26 types of data for each satellite, including 
             technical information about each satellite (mass, power, launch date, expected lifetime) and its orbit (apogee, perigee, inclination, and period), as well as information 
             on what the satellite is used for, and who owns, operates, and built the satellite.
-            Class of orbit etc. 
           </small></p>
         </section>
         <section id="StackedChart">
@@ -72,10 +71,10 @@
             <p>
                 <small>
                     The Stacked bar chart in the previous screen shows the satellites currently orbiting the earth and its age. These satellites are broken out by its usage
-                    type. Note that these are the satellites that are currently orbiting the earth and functioning. This visual reveals some interesting information and sheds
-                    some light on how we have made progress throughout the years. For example it can be seen from visual that oldest functioning satellite that is still orbiting
-                    the Earth was launched 44 years ago for mix use of Military and Commercial purpose. Many of these old satellites were used for either military or 
-                    commercial purposes. 
+                    type. Note that these are the satellites that are currently orbiting the earth and functioning. You can use chart legends to filter the data.
+                    This visual reveals some interesting information on how we have made progress throughout the years. For example it can be seen from visual that oldest 
+                    functioning satellite that is still orbiting the Earth was launched 44 years ago for mix use of Military and Commercial purpose. Many of these old satellites 
+                    were used for either military or commercial purposes. 
                 </small>
               </p>
               <p>
@@ -88,7 +87,7 @@
               <p>
                   <small>
                     These satellites are serve specific purpose and orbit in its unique class. Some of the satellites have its fixed orbit type and orbit class i.e. how far it is 
-                    orbiting the earth, how the path of orbit look like etc. In the next screen let's take a look where these satellites are grouped by its purpose and 
+                    orbiting from the earth, how the path of orbit look like etc. In the next screen let's take a look where these satellites are grouped by its purpose and 
                     then again by orbit type and its class.  
                   </small>
                 </p>
@@ -101,13 +100,18 @@
         <section id="TypeDescription">
             <p>
               <small>
-                Last chart illustrates what there satellites are used for. Satellites are shown in packed circle and first grouped by its purpose. We can see that some of the important
+                Last chart illustrates what these satellites are used for. Satellites are shown in packed circle and first grouped by its purpose. We can see that some of the important
                 areas in which satellites are used for are Communications, Earth Observation like weather prediction, navigation, space observation, space sciences etc. Satellites are 
                 then grouped by its orbit type, these includes but not limited to equatorial, sun-synchronus, polar, non-polar inclined and there are some satellites that do not have 
-                fixed orbit type and can be manuevered as needed. These satellites falls under none categories as shown in the chart. Satellites are further classified into third group
-                which is its orbit class. There are LEO,GEO, MEO and elliptical. LEO is short for low earth orbit. These satellites orbit between 160 and 2000 km above earth. MEO is
-                short for medium earth orbit and altitude is between 2000 and 35786km. GEO stands for geosynchronous, or geostationary earth orbit and these satellites for higher than
-                35786 km above earth's surface.
+                fixed orbit type and can be manuevered as needed. These satellites falls under none category as shown in the chart.
+              </small>
+            </p>
+            <p>
+              <small>
+                  Satellites are further classified into third group which is its orbit class. There are LEO,GEO, MEO and elliptical. LEO is short for low earth orbit. 
+                  These satellites orbit between 160 and 2,000 km above earth. MEO is short for medium earth orbit and altitude is between 2,000 and 35,786km. GEO stands for 
+                  geosynchronous, or geostationary earth orbit and these satellites for higher than 35,786 km above earth's surface. You can zoom on this just by clicking on 
+                  circles. Similarly you can zoom out by clicking anywhere on circle.
               </small>
             </p>
             <p>
@@ -130,12 +134,21 @@
               This Chart gives us good understanding of how satellites orbits around the Earth and how its path will look like.
             </small>
           </p>
+          <P>
+            <small>
+                Majority of the the satellites have Apogee less than 50,000 km and perigee less than 5,000 km and this is why many satellites data points are concentrated around the 
+                origin in the chart. Another observation from the chart is satellites used for Space Science have very high apogee and perigee which makes sense as these satellites scan 
+                larger portion of the solar system and universe for exploration. Satellites used for communications and navigation also have higher apogee and perigee compates to satellites 
+                used for earth observation. Users can use the legend to filter the data points. In the next screen, let's see how the world has made progess and what coutries have there 
+                satellites orbiting the earth...
+            </small>
+          </P>
         </section>  
         <section id="Conclusion">
             <h4>So what happened in last 4-5 decades...</h4>
             <p><iframe class="juxtapose" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=03d44e24-e16f-11e5-a524-0e7075bba956" frameborder="0" width="650" height="380"></iframe></p>
-            <p><small>As we can see that since the first satellite was launched back in 60's there were only few countries that had satellites let alone the capabilities on launcing 
-              the satellite with space launch. In last 4 decades we have seen tremendous growth notn only in number of satellies launched by several coutries but also in what purpose 
+            <p><small>In the above image, we can see that since the first satellite was launched back in 60's there were only few countries that had satellites let alone the capabilities of launcing 
+              the satellite with space launch. User can slide the bar to left or right to compare world between 1966 and 2016. In last 4 decades we have seen tremendous growth notn only in number of satellies launched by several coutries but also in what purpose 
               these satellites are used for. As of 2016, countries from virtually every continent have their satellite orbiting the earth. We also see the increase in coutries who have
               space launching capabilities as well.
             </small></p>
@@ -152,6 +165,7 @@
               <li class="fragement" data-fragement-index="4">Filterable scatter chart from <a href="https://bl.ocks.org/Ctuauden">Ctuauden</a></li>
               <li class="fragement" data-fragement-index="6">Before and after comparison picture using <a href="https://juxtapose.knightlab.com/">JuxtaposeJS</a> and <a hre="https://www.ucsusa.org/nuclear-weapons/space-weapons/satellite-database">UCS site</a></li>
               <li class="fragement" data-fragement-index="7">Visualization project by <a href="https://www.linkedin.com/in/nishit-patel-89246430/">Nishit K Patel</a></li>
+              <li class="fragement" data-fragement-index="8">Source Code on <a href="https://nishitpatel01.github.io/SatellitesOrbitingTheEarth_in_D3/#/Index">Github</a></li>
             </ul>
           </small>
         </section>  
