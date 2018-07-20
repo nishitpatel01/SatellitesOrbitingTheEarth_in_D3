@@ -27,13 +27,18 @@ body {
   display: none;
 }
 
-.tooltip{
-  text-anchor: middle;
-  font-family: sans-serif;
-  font-size: 12px;
-  font-weight: bold;
+div.tooltip{
+  position: absolute;           
+  text-align: center;           
+  width: 150px;                  
+  height: 50px;                 
+  padding: 2px;             
+  font: 12px sans-serif;        
+  background: rgb(108, 162, 231);   
+  border: 0px;      
+  border-radius: 8px;           
+  pointer-events: none;   
   fill:rgb(255, 255, 255);
-  background:tan; 
 }
 
 
@@ -71,6 +76,10 @@ var svg = d3.select("body").append("svg")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
     .style("display","block")
     .style("margin","auto");
+
+var tooltip = d3.select("body").append("div")
+					.attr("class", "tooltip")
+					.style("opacity", 0); 
 
 var active_link = "0"; //to control legend selections and hover
 var legendClicked; //to control legend selections
@@ -137,9 +146,24 @@ d3.csv("satellite_pivot2.csv", function(error, data) {
         classLabel = d.name.replace(/\s/g, ''); //remove spaces
         return "class" + classLabel;
       })
-      .style("fill", function(d) { return color(d.name); });
+      .style("fill", function(d) { return color(d.name); })
+      .on("mouseover", function(d) {  
+            var delta = d.y1 - d.y0;    
+            tooltip.transition()        
+                .duration(200)      
+                .style("opacity", .9);      
+            tooltip .html(d.name +": "+ delta)  
+                .style("left", (d3.event.pageX) + "px")     
+                .style("top", (d3.event.pageY - 28) + "px");    
+            })                  
+        .on("mouseout", function(d) {       
+            div.transition()        
+                .duration(500)      
+                .style("opacity", 0)  ;
+              });
 
-  Age.selectAll("rect")
+
+ /* Age.selectAll("rect")
        .on("mouseover", function(d){
 
           var delta = d.y1 - d.y0;
@@ -153,15 +177,14 @@ d3.csv("satellite_pivot2.csv", function(error, data) {
           .attr("x",xPos)
           .attr("y",yPos +height/2)
           .attr("class","tooltip")
-          .text(d.name +": "+ delta)
-          .attr("background","tan"); 
+          .text(d.name +": "+ delta);
           
        })
        .on("mouseout",function(){
           svg.select(".tooltip").remove();
           d3.select(this).attr("stroke","pink").attr("stroke-width",0.2);
                                 
-        })
+        })*/
 
 
   var legend = svg.selectAll(".legend")
