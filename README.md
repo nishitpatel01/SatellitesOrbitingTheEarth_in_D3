@@ -3,6 +3,8 @@
 
 ##  A Visualization of Every satellite orbiting the Earth in D3.js
 
+### Live Demo: [Here](https://nishitpatel01.github.io/SatellitesOrbitingTheEarth_in_D3/#/Index).
+
 ### Dataset Used
 - The dataset used for this visualization is from Union of Concerned Scientst database. This dataset consists of data about all the satellites that orbit the earth today. Assembled by experts at the Union of Concerned Scientists (UCS), the Satellite Database is a listing of the more than 1,700 operational satellites currently in orbit around Earth. The database contains 26 types of data for each satellite, including technical information about each satellite (mass, power, launch date, expected lifetime) and its orbit (apogee, perigee, inclination, and period), as well as information on what the satellite is used for, and who owns, operates, and built the satellite.
 
