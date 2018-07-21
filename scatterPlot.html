@@ -3,7 +3,7 @@
 <style>
 
 body {
-  font: 10px sans-serif;
+  font: 14px sans-serif;
   fill: white;
 }
 
@@ -121,14 +121,14 @@ d3.csv('satellites.csv', function(error, data){
 		.attr('x', 10)
 		.attr('y', height - 450)
 		.attr('class', 'label')
-		.text('Apogee');
+		.text('Apogee (In km)');
 
 	svg.append('text')
 		.attr('x', width)
 		.attr('y', height - 10)
 		.attr('text-anchor', 'end')
 		.attr('class', 'label')
-		.text('Perigee');
+		.text('Perigee (In km)');
   	
   // we use the ordinal scale symbols to generate symbols
   // such as d3.symbolCross, etc..
