@@ -14,7 +14,6 @@ body {
   stroke: #000;
   shape-rendering: crispEdges;
 }
-
 .axis text{
     fill: white;
 }
@@ -112,7 +111,7 @@ d3.csv("satellite_pivot2.csv", function(error, data) {
       .append("text")
       .attr("x", width - 10)
       .text("text-anchor","start")
-      .text("Age");
+      .text("Age (In years)");
 
   svg.append("g")
       .attr("class", "y axis")
